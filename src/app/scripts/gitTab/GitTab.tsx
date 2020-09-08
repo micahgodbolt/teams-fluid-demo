@@ -11,7 +11,7 @@ import TeamsBaseComponent, {
 } from "msteams-react-base-component";
 import * as microsoftTeams from "@microsoft/teams-js";
 import * as jwt from "jsonwebtoken";
-import { App } from "../components/app";
+import { App } from "../brainstorm/app";
 /**
  * State for the gitTabTab React component
  */
@@ -24,7 +24,7 @@ export interface IGitTabState extends ITeamsBaseComponentState {
 /**
  * Properties for the gitTabTab React component
  */
-export interface IGitTabProps {}
+export interface IGitTabProps { }
 
 /**
  * Implementation of the git Tab content page

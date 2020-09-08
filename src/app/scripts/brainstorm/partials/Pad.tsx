@@ -3,7 +3,7 @@
  * Licensed under the MIT License.
  */
 
-import * as  React from "react";
+import * as React from "react";
 import { IUser } from "../fluid-object/interfaces";
 import { NoteEditor } from "./NoteEditor";
 import { Button } from "./Button";
@@ -54,7 +54,7 @@ export const Pad: React.FC<PadProps> = (props) => {
         <Button onClick={handleHighlight}>
           {props.highlightMine ? "Stop highlighting" : "Highlight my ideas"}
         </Button>
-        <Button onClick={props.clear}> Tidy up </Button>
+        {/* <Button onClick={props.clear}> Tidy up </Button> */}
         <UserName user={props.user} userCount={props.users.length} />
       </div>
     </div>
