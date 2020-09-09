@@ -19,11 +19,13 @@ if (window.location.hash.length === 0) {
     createNew = true;
     window.location.hash = Date.now().toString();
 }
+
 const documentId = window.location.hash.substring(1);
 
 const getContainer = async () => {
     const container = await getTinyliciousContainer(documentId, NoteroContainerFactory, createNew);
     const newDefaultObject = await getDefaultObjectFromContainer<Notero>(container);
+
     return newDefaultObject;
 };
 
@@ -32,12 +34,16 @@ export const App = () => {
     const [defaultObject, setDefaultObject] = React.useState<any>(undefined);
 
     React.useEffect(() => {
-        setDefaultObject(getContainer())
+        const fetchContainer = async () => {
+            const result = await getContainer();
+            setDefaultObject(result)
+        }
+        fetchContainer();
     }, []);
 
-    // if (defaultObject !== undefined) {
-    //     return <NoteroView model={defaultObject} />
-    // }
+    if (defaultObject !== undefined) {
+        return <NoteroView model={defaultObject} />
+    }
 
     return <div>loading</div>
 
