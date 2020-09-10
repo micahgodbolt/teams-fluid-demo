@@ -1,6 +1,6 @@
 {
-  "$schema": "https://developer.microsoft.com/en-us/json-schemas/teams/v1.6/MicrosoftTeams.schema.json",
-  "manifestVersion": "1.6",
+  "$schema": "https://developer.microsoft.com/en-us/json-schemas/teams/v1.5/MicrosoftTeams.schema.json",
+  "manifestVersion": "devPreview",
   "id": "{{APPLICATION_ID}}",
   "version": "{{VERSION}}",
   "packageName": "{{PACKAGE_NAME}}",
@@ -11,8 +11,8 @@
     "termsOfUseUrl": "https://{{HOSTNAME}}/tou.html"
   },
   "name": {
-    "short": "git",
-    "full": "git"
+    "short": "Brainstorm Fluid Component",
+    "full": "Brainstorm"
   },
   "description": {
     "short": "TODO: add short description here",
@@ -26,18 +26,26 @@
   "configurableTabs": [
     {
       "configurationUrl": "https://{{HOSTNAME}}/gitTab/config.html?name={loginHint}&tenant={tid}&group={groupId}&theme={theme}",
-      "canUpdateConfiguration": true,
+      "canUpdateConfiguration": false,
       "scopes": [
-        "team"
+        "team",
+        "groupchat"
       ],
-      "sharePointPreviewImage": "https://{{HOSTNAME}}/assets/gitTab-preview.png",
-      "supportedSharePointHosts": [
-        "sharePointFullPage",
-        "sharePointWebPart"
+      "meetingSurfaces": [
+        "sidePanel"
       ]
     }
   ],
-  "staticTabs": [],
+  "staticTabs": [
+    {
+      "entityId": "Fluid",
+      "name": "Fluid",
+      "contentUrl": "https://{{HOSTNAME}}​​",
+      "scopes": [
+        "personal"
+      ]
+    }
+  ],
   "bots": [],
   "connectors": [],
   "composeExtensions": [],

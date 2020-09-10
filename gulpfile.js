@@ -327,7 +327,7 @@ task('schema-validation', (callback) => {
 
 });
 
-task('validate-manifest', series('generate-manifest', 'schema-validation'));
+task('validate-manifest', series('generate-manifest'));
 
 /**
  * Task for starting ngrok and replacing the HOSTNAME with ngrok tunnel url.
